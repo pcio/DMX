@@ -1,0 +1,20 @@
+fixtures:
+  - id: par_left
+    type: par100
+    address: 1
+    mode: 7
+
+  - id: par_right
+    type: par100
+    address: 8
+    mode: 7
+
+  - id: moving_head
+    type: tmh13
+    address: 15
+    mode: 11
+
+  - id: tetra
+    type: tetra
+    address: 26
+    mode: 11
