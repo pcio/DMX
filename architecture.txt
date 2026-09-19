@@ -1,0 +1,77 @@
+lightshow/
+│
+├── ai/
+│   ├── model.py
+│   └── prompts.py
+│
+├── dmx/
+│   ├── controller.py
+│   └── fixtures.py
+│
+├── scenes/
+│   ├── party.json
+│   ├── calm.json
+│   ├── rock.json
+│   └── sunset.json
+│
+└── main.py
+
+
+             Mikrofon / tekst
+                    │
+                    ▼
+          ┌──────────────────┐
+          │  Lokal sprogmodel │
+          │  på Raspberry Pi  │
+          └────────┬─────────┘
+                   │
+            struktureret JSON
+                   │
+                   ▼
+          ┌──────────────────┐
+          │   Show Controller │
+          │   Python / C#    │
+          └────────┬─────────┘
+                   │
+             DMX universe
+                   │
+                   ▼
+          ┌──────────────────┐
+          │ ENTTEC OpenDMX   │
+          │      USB         │
+          └────────┬─────────┘
+                   │
+                   ▼
+                💡💡💡
+
+                    Raspberry Pi 5
+                         │
+              ┌──────────┴──────────┐
+              │                     │
+        Lokal LLM                Light Engine
+       Qwen/Gemma                  Python
+              │                     │
+              └──────────┬──────────┘
+                         │
+                    DMX Universe
+                         │
+                 ENTTEC OpenDMX USB
+                         │
+                         ▼
+       ┌─────────┬─────────┬─────────┬─────────┐
+       │         │         │         │
+     PAR-100   PAR-100   TMH-13    QTX Tetra
+       #1        #2
+
+
+
+| Fixture    | Start |          Kanaler |
+| ---------- | ----: | ---------------: |
+| PAR-100 #1 |     1 |              1–7 |
+| PAR-100 #2 |     8 |             8–14 |
+| TMH-13     |    15 |            15–25 |
+| Tetra      |    26 | afhænger af mode |
+
+
+
+
