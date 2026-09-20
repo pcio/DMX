@@ -1,6 +1,6 @@
-TETRA
+============== TETRA
 
-CH	Lamp		Value	to	Result				Red	Green	Blue	White	Purple
+Channel	Lamp		Value	to	Result				Red	Green	Blue	White	Purple
 1	Water wave	000	024	Off
 			025	040	Red				*
 			041	056	Green					*
@@ -9,7 +9,7 @@ CH	Lamp		Value	to	Result				Red	Green	Blue	White	Purple
 			089	104	RedGreen			*	*
 			105	120	BlueWhite 				*	*
 			121	136	BlueGreen				*	*
-			137	152	RedGreenWhiteBlue		*	*	*	*
+			137	152	RedGreenBlue			*	*	*	
 			153	168	BluePurple					*		*
 			169	184	GreenWhite 				*		*
 			185	200	BlueGreenPurple				*	*		*
@@ -38,20 +38,109 @@ CH	Lamp		Value	to	Result				Red	Green	Blue	White	Purple
 			200	255	Red + Green
 
 5	UV		000	009	Off
-010 - 255	UV on
-6	000 - 007	All effects on
-008 - 255	Combinations of 1, 2, 3 or 4 effects
-7	000 - 009	Strobe off
-010 - 255	Strobe fast to slow
-8	000 - 009	Water wave motor off
-010 - 255	Water wave motor fast to slow
-9	000 - 009	Fireball motor off
-010 - 255	Fireball motor fast to slow
-10	000 - 009	Laser motor off
-010 - 127	Laser motor fast to slow clockwise
-128 - 255	Laser motor slow to fast anticlockwise
-11	000 - 050	Manual setting from DMX channels 1-10
-051 - 150	Auto program 1
-151 - 200	Auto program 2
-201 - 250	Sound program 1
-251 - 255	Sound program 2
+			010 	255	UV on
+
+6			000	007	All effects on
+			008	255	Combinations of 1, 2, 3 or 4 effects
+
+7	Blink		000 	009	Off
+			010 	255	Fast to slow 245
+
+8	Water wave 	000	009	Motor Off
+			010	255	Motor fast to slow
+
+9	Fireball	000	009	Motor off
+			010	255	Motor fast to slow
+
+10	Laser		000	009	Motor off
+			010	127	Motor fast to slow clockwise
+			128	255	Motor slow to fast anticlockwise
+
+11			000	050	Manual
+			051	150	Auto program 1
+			151	200	Auto program 2
+			201 	250	Sound program 1
+			251 	255	Sound program 2
+
+
+{"action": "fireball", "colour": "red|green|blue|white|redgreen|bluewhite|greenblue|redgreenblue|bluepurple|greenwhite|greenbluepurple|redgreenwhite|bluepurplewhite|greenbuewhite|greenbluepurplewhite|off"}
+
+============== PAR100
+
+Channel		Value		Function			Setting
+1		0-255		Master dimming (0-100%) 	Available in all modes
+2		0-255		Red dimming (0-100%)		Dimming modes only
+3		0-255		Green dimming (0-100%)		Dimming modes only
+4		0-255		Blue dimming (0-100%)		Dimming modes only
+5		0-255 		Strobe (speed slow to fast)	Available in all modes
+6		0-50		Open Channel 1-5
+		51-100		Colour select
+		101-150		Colour jump setting
+		151-200		Colour fade setting
+		201-250		Colour pulse setting
+		251-255		Open sound to light setting
+7		0-255		Speed from slow to fast		Available in all modes
+
+
+
+
+============== TMH13
+
+
+Channel		Value		Function
+1		0-255		Horizontale Bewegung (PAN)
+2		0-255		Horizontale Bewegung (PAN) - fine
+3		0-255		Vertikale Bewegung (TILT)
+4		0-255		Vertikale Bewegung (TILT) - fine
+
+5		0-9		White
+		10-19		Red
+		20 29		Green
+		30 39		Blue
+		40 49		Yellow
+		50 59		Cyan
+		60 69		Orange
+		70 79		Magenta
+		80 89		Magenta/Orange
+		90 99		Orange/Cyan
+		100 109		Cyan/Yellow
+		110 119		Yellow/Blue
+		120 129		Blae/Green
+		130 139		Green/Red
+		140 255		Rainboweffect with slow to fast
+
+6		0-7		No Gobo
+		8 15		Gobo 1
+		16 24		Gobo 2
+		24 31		Gobo 3
+		32 39		Gobo 4
+		40 47		Gobo 5
+		48 55		Gobo 6
+		56 63		Gobo 7
+		64 71		Gobo 7 Shake with slow to fast
+		72 79		Gobo 6 Shake with slow to fast
+		80 87		Gobo 5 Shake with slow to fast
+		88 95		Gobo 4 Shake with slow to fast
+		96 103		Gobo 3 Shake with slow to fast
+		104 111		Gobo 2 Shake with slow to fast
+		112 119		Gobo 1 Shake with slow to fast
+		120 127		No Gobo
+		128 255 	Rotating Gobo with slow to fast
+
+7		0-9		No function
+		10 249		Strobe-Effekt with slow to fast
+		250 255		No funciton
+
+8		0-255		Brightness
+
+9		0-255		PAN-/TILT Speed
+
+10		0-59		No function
+		60-159		Intern program (auto)
+		160-255		Sound controlled (auto)
+
+11		0-20		No function
+		21 100		PAN reset
+		101 200 	TILT reset
+		201 249		PAN & TILT reset
+		250 255		Reset

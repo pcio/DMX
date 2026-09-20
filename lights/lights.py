@@ -6,7 +6,7 @@ from ai.ask_ai import ask_ai
 from bizz.engine import Engine
     
 def main():
-    engined = Engine()  # Assuming you have a function to initialize the engine
+    engined = Engine()  
 
     print("* * * Lighting system initialized * * *")
 

@@ -214,11 +214,15 @@ def execute_command(tetra, command):
 
     elif action == "uv":
         tetra.manual()
-        tetra.uv()
+        tetra.uv(command["value"])
 
     elif action == "water":
         tetra.manual()
         tetra.water(command["value"])
+
+    elif action == "effects":
+        tetra.manual()
+        tetra.effects(command["value"])
 
     elif action == "fireball":
         tetra.manual()
