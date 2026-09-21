@@ -1,16 +1,10 @@
 def scene_rock(engine):
+    engine.set_color("pars", "red", 100)
 
-    engine.pars.color("red", 100)
+    moving_head = engine.fixture("moving_head")
+    moving_head.set_color("white")
+    moving_head.sweep(200)
 
-    engine.tmh13.color("white")
-    engine.tmh13.sweep(
-        speed="fast"
-    )
-
-    engine.tetra.fireball("red")
-    engine.tetra.laser("redgreen")
-
-    engine.strobe(
-        fixtures=["pars"],
-        speed=80
-    )
+    tetra = engine.fixture("tetra")
+    tetra.fireball("red")
+    tetra.laser("redgreen")

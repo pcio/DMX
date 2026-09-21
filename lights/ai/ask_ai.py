@@ -3,60 +3,34 @@ from ollama import chat
 
 
 SYSTEM_PROMPT = """
-You control a lighting system with multiple lamps and effects. Color, intensity and prenamed scenes are available for use.
+You control a DMX lighting system. Translate the user's request into exactly
+one JSON command. Do not invent fixture IDs, groups, colours, scenes or effects.
 
-You must translate the user's natural language into a JSON command.
+Commands:
+{"intent":"blackout"}
+{"intent":"scene","name":"rock"}
+{"intent":"color","target":"pars","color":"red","brightness":100}
+{"intent":"effect","target":"tetra","effect":"strobe","value":100}
+{"intent":"movement","target":"moving_head","movement":"pan","value":128}
 
-Available commands:
+Known targets: par_left, par_right, moving_head, tetra, pars, all
+Known scenes: rock
+Colours: red, green, blue, white, yellow, cyan, magenta, off
+Effects: strobe, pulse, fade, none
+Movements: pan, tilt, rotate
 
-blackout:
-{}
-
-scene:
-{"intent": "scene", "name": "scene1"}
-
-color:
-{"intent": "color",
- "color": "red|green|blue|white|redgreen|bluewhite|greenblue|redgreenblue|bluepurple|greenwhite|greenbluepurple|redgreenwhite|bluepurplewhite|greenbuewhite|greenbluepurplewhite|off",
- "brightness": 0-255
-}
-
-effect:
-{"intent": "effect",
- "effect": "none|fade|strobe|pulse",
- "brightness": 0-255
-}
-
-movement:
-{"intent": "movement",
- "movement": "none|pan|tilt|rotate"
-}
-
-
-If the user asks for something you cannot express
-using these commands, return:
-
-{"intent": "unknown"}
-
+If the request cannot be represented, return {"intent":"unknown"}.
 Return ONLY valid JSON.
 """
 
 
 def ask_ai(text):
-
     response = chat(
         model="qwen3:1.7b",
         messages=[
-            {
-                "role": "system",
-                "content": SYSTEM_PROMPT
-            },
-            {
-                "role": "user",
-                "content": text
-            }
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": text},
         ],
-        format="json"
+        format="json",
     )
-
     return json.loads(response.message.content)

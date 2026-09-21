@@ -18,3 +18,13 @@ fixtures:
     type: tetra
     address: 26
     mode: 11
+
+groups:
+  pars:
+    - par_left
+    - par_right
+  all:
+    - par_left
+    - par_right
+    - moving_head
+    - tetra
