@@ -2,7 +2,7 @@ import ftd2xx
 import time
 import threading
 
-from light_ai import ask_ai
+from FirstDraft.light_ai import ask_ai
 
 # =========================================================
 # TETRA

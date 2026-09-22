@@ -6,17 +6,17 @@ fixtures:
 
   - id: par_right
     type: par100
-    address: 8
+    address: 17
     mode: 7
 
   - id: moving_head
     type: tmh13
-    address: 15
+    address: 33
     mode: 11
 
   - id: tetra
     type: tetra
-    address: 26
+    address: 49
     mode: 11
 
 groups:

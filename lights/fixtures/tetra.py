@@ -5,6 +5,9 @@ class Tetra(Fixture):
     def __init__(self, address=1, mode=11):
         super().__init__(address, mode)
 
+    def set_channel(self, channel, value):
+        super().set_channel(channel, value)
+
     def water(self, value=128): self.set_channel(1, value)
     def white(self, value=255): self.set_channel(2, value)
 
